@@ -1,0 +1,56 @@
+# Questão 1
+
+nome = input("Digite seu nome: ")
+peso = float(input("Coloque o seu peso: "))
+agua_ingerida = float(input("Quanto de água você ja ingeriu em litros? "))
+
+agua_ideal = peso * 0.035
+agua_a_ingerir = agua_ideal - agua_ingerida
+
+print("Seu nome é: ", nome)
+print("Seu peso é: ", peso)
+print("Quantidade de água ingerida: ", agua_ingerida , "Litros")
+print("Quantidade ideia de água a ingerir: ","{:.2f}".format(agua_ideal), "Litros")
+
+if agua_ingerida > agua_ideal:
+    print("Parabéns, você atingiu a meta de hidratação diária")
+else: print("Continue focado em se hidratar por hoje, ainda faltam", "{:.2f}".format(agua_a_ingerir), "litros! Você consegue!")
+
+# Questão 2
+
+placa = input("Digite a placa do carro: ")
+valor_combustivel = float(input("Digite o valor do litro do combustível: "))
+km_60 = float(input("Digite a quantidade de quilômetros a 60 km/h: "))
+km_80 = float(input("Digite a quantidade de quilômetros a 80 km/h: "))
+km_100 = float(input("Digite a quantidade de quilômetros a 100 km/h: "))
+km_120 = float(input("Digite a quantidade de quilômetros a 120 km/h: "))
+km_140 = float(input("Digite a quantidade de quilômetros a 140 km/h: "))
+
+consumo_60km = 30.7
+consumo_80km = 26.8
+consumo_100km = 22.4
+consumo_120km = 18.1
+consumo_140km = 14.5
+
+combustivel_60km = km_60 / consumo_60km
+combustivel_80km = km_80 / consumo_80km
+combustivel_100km = km_100 / consumo_100km
+combustivel_120km = km_120 / consumo_120km
+combustivel_140km = km_140 / consumo_140km
+
+combustivel_total = combustivel_60km + combustivel_80km + combustivel_100km + combustivel_120km + combustivel_140km
+
+tempo_60 = km_60 / 60
+tempo_80 = km_80 / 80
+tempo_100 = km_100 / 100
+tempo_120 = km_120 / 120
+tempo_140 = km_140 / 140
+
+velocidade_media = (km_60 + km_80 + km_100 + km_120 + km_140) / (tempo_60 + tempo_80 + tempo_100 + tempo_120 + tempo_140)
+
+custo_total = combustivel_total * valor_combustivel
+
+print("Placa do carro:", placa)
+print("Custo total da viagem:", custo_total)
+print("Velocidade média da viagem:", velocidade_media)
+print("Quantidade total de combustível:", combustivel_total)
